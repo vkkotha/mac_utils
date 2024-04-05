@@ -18,10 +18,10 @@ void swapDisplays(UInt32 display1, UInt32 display2) {
 
     UInt32 leftDisplay = display1;
     UInt32 rightDisplay = display2;
-    if (leftDisplay > rightDisplay) {
-        leftDisplay = display2;
-        rightDisplay = display1;
-    }
+    // if (leftDisplay > rightDisplay) {
+    //     leftDisplay = display2;
+    //     rightDisplay = display1;
+    // }
 
     float leftX = CGDisplayBounds(leftDisplay).origin.x;
     float leftY = CGDisplayBounds(leftDisplay).origin.y;
@@ -29,18 +29,17 @@ void swapDisplays(UInt32 display1, UInt32 display2) {
     float rightY = CGDisplayBounds(rightDisplay).origin.y;
 
 
-    if (leftX == 0) { 
-        // left is current primary display. Make right as primary
-	if (rightX < 0) {
-            rightX = -1 * rightX;
-        }
-        CGConfigureDisplayOrigin(configRef, leftDisplay, rightX, rightY);
-    } else {
-        // right is current primary display. Make left as primary
-        if (leftX > 0) {
-            leftX = -1 * leftX;
-        }
-    }
+    // if (leftX == 0) { 
+    //     // left is current primary display. Make right as primary
+	//     if (rightX < 0) {
+    //         rightX = -1 * rightX;
+    //     }
+    // } else {
+    //     // right is current primary display. Make left as primary
+    //     if (leftX > 0) {
+    //         leftX = -1 * leftX;
+    //     }
+    // }
     CGConfigureDisplayOrigin(configRef, leftDisplay, rightX, rightY);
     CGConfigureDisplayOrigin(configRef, rightDisplay, leftX, leftY);
 
