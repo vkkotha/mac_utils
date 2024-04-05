@@ -9,6 +9,10 @@ Run the command
 
 ```clang -o swap_displays -framework CoreGraphics swap_displays.c```
 
+OR
+
+```./build.sh```
+
 #### Installing 
 Run the command 
 
